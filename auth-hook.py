@@ -12,7 +12,7 @@ def main():
     """Run authentification hook."""
     # get authentication data
     with open(
-            os.path.dirname(__file__) + os.path.normcase('/strato-auth.json'),
+            os.getenv('STRATO_AUTH',os.path.dirname(__file__) + os.path.normcase('/strato-auth.json')),
             encoding='UTF-8',
             ) as file:
         auth = json.load(file)
